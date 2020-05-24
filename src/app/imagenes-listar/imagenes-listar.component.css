@@ -2,4 +2,9 @@
     background-color: red ;
 
     width: 150px;
-    height: auto;}
+    height: auto;
+}
+mat-expansion-panel-header {
+    background: #D9FAD2 ;
+    }
+    

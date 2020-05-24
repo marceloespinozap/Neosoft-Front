@@ -9,7 +9,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { ImagenesAddComponent } from './imagenes-add/imagenes-add.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ComentariosComponent } from './comentarios/comentarios.component';
 import { ImagenShowComponent } from './imagen-show/imagen-show.component'
@@ -18,7 +17,6 @@ import { ImagenShowComponent } from './imagen-show/imagen-show.component'
   declarations: [
     AppComponent,
     ImagenesListarComponent,
-    ImagenesAddComponent,
     ComentariosComponent,
     ImagenShowComponent,
     

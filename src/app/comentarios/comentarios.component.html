@@ -12,8 +12,8 @@
         <textarea  id="input-name"  formControlName="comentario" placeholder="Ingresa aqui tu comentario">
         </textarea>
           <div style="color:rgb(255,0,0)">
-          <h6 *ngIf="comentarioForm.get('comentario').hasError('required')">Ingrese un nombre</h6>
-          <h6 *ngIf="comentarioForm.get('comentario').hasError('minlength')">debe tener un largo minimo de 4 caracteres</h6>
+          <h6 *ngIf="comentarioForm.get('comentario').hasError('required')">Ingrese un Comentario</h6>
+          <h6 *ngIf="comentarioForm.get('comentario').hasError('minlength')">debe tener un largo minimo de 1 caracteres</h6>
           <h6 *ngIf="comentarioForm.get('comentario').hasError('maxlength')">debe tener un largo menor a 20 caracteres</h6>
       </div>
       </div>

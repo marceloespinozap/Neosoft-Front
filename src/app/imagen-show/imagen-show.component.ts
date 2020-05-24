@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {ServiciosService} from '../servicios.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class ImagenShowComponent implements OnInit {
   @Input('imagen-id') id: string;
   imagen: any;
+
+  
   constructor(
     private servicio: ServiciosService,
     private route: ActivatedRoute,

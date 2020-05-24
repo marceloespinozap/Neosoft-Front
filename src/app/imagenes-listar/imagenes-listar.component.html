@@ -1,8 +1,55 @@
 
+<mat-expansion-panel >
+    <mat-expansion-panel-header >
+      <mat-panel-title > <h4><b>Añadir nueva Imagen</b></h4>
+  
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form [formGroup]="imagenForm"  (ngSubmit)="addImagen(imagenForm.value)"   enctype="multipart/form-data">
+  
+      <div class="form-group row">
+        <h6  class="col-1">Nombre:</h6>
+        <div class="col-sm-3">
+          <input type="text" class="form-control input-lg" id="input-name"  formControlName="nombre" placeholder="Nombre de imagen">
+        </div>
+        <div  class="col-sm-6" style="color:rgb(255,0,0)">
+            <h6 *ngIf="imagenForm.get('nombre').hasError('required')">Ingrese un nombre</h6>
+            <h6 *ngIf="imagenForm.get('nombre').hasError('minlength')">Debe tener un largo minimo de 2 caracteres</h6>
+            <h6 *ngIf="imagenForm.get('nombre').hasError('maxlength')">Debe tener un largo menor a 20 caracteres</h6>
+        </div>
+      </div>
 
-<app-imagenes-add [recargar]=FuncionInput >
+      <div class="form-group row">
+        <h6   class="col-1">Imagen:</h6>
+    
 
-</app-imagenes-add>
+      <div class="col-sm-4">
+    <input  id="input-imagen" type="file" (change)="onFileChange($event)"  />
+      </div>
+      <div style="color:rgb(255,0,0)">
+        <h6 *ngIf="imagenForm.get('archivo').hasError('required')">Ingrese un archivo</h6>
+        <!---  
+        <h6 *ngIf="eventoForm.get('title').hasError('minlength')">debe tener un largo minimo de 4 caracteres</h6>
+        -->
+    </div>
+  </div>
+
+  
+  
+      <div class="text-right">
+        <button type="submit" class="btn btn-sm btn-primary" [disabled]="imagenForm.invalid">Guardar</button>
+
+      </div>
+    
+    </form>
+  </mat-expansion-panel>
+  <div *ngIf="alertaok" class="alert alert-success" role="alert">
+    imagen agregada correctamente</div>
+    <div *ngIf="alertaerror"class="alert alert-danger" role="alert">
+    Error ingresar imagen (Recuerda que debe ser formato jpeg,png,jpg). </div>
+    
+    
+
 
 <table class="table">
     <thead>
