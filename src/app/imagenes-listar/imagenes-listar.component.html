@@ -1,0 +1,35 @@
+
+
+<app-imagenes-add [recargar]=FuncionInput >
+
+</app-imagenes-add>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre imagen</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Hora</th>
+        <th scope="col">-</th>
+        <th scope="col">-</th>
+
+    </tr>
+    </thead>
+    <tbody  >
+
+   
+        <tr *ngFor="let x of imagenes" class="container card-body">
+            <td>{{x.nombre}}</td>
+            <td>{{x.fecha | date: 'dd/MM/yyyy'}}</td>
+            <td>{{x.fecha | date: 'HH:mm'}}</td>
+            <td>            
+        <button type="button"  class="btn btn-secondary" routerLink="/comentarios/{{x.id}}" >Comentarios</button>
+            </td>
+            <td>            
+              <button type="button"  class="btn btn-success" routerLink="/{{x.id}}" >Ver imagen</button>
+                  </td>
+      
+          </tr>
+</tbody>
+      </table>
+      
